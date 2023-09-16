@@ -7,6 +7,14 @@ import CoinsTableHead from "./CoinsTableHead";
 const ALlCurrencies = (props) => {
   const [page, setPageNum] = useState(1);
 
+  const themeColor = props.theme === true ? "black" : "white";
+
+  const customStyles = {
+    "& .MuiPaginationItem-page": {
+      color: themeColor,
+    },
+  };
+
   return (
     <Fragment>
       <div className="overflow-x-auto mb-8">
@@ -47,6 +55,7 @@ const ALlCurrencies = (props) => {
           count={+(props.allCoins?.length / 20).toFixed(0)}
           variant="outlined"
           color="primary"
+          sx={customStyles}
           size="small"
           onChange={(e, val) => {
             setPageNum(val);
@@ -56,4 +65,5 @@ const ALlCurrencies = (props) => {
     </Fragment>
   );
 };
+
 export default ALlCurrencies;

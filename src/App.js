@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import CryptoCurrencies from "./components/cryptocurrencies/CryptoCurrencies";
 import NavBar from "./components/navbar/NavBar";
-import TradeViewChart from "react-crypto-chart";
 
 import Modal from "./ui/Modal";
 import LiveChart from "./components/trending/LiveChart";
