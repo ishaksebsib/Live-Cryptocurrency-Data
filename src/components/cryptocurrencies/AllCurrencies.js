@@ -12,6 +12,7 @@ const ALlCurrencies = (props) => {
   const customStyles = {
     "& .MuiPaginationItem-page": {
       color: themeColor,
+      borderColor: themeColor,
     },
   };
 
@@ -54,9 +55,12 @@ const ALlCurrencies = (props) => {
           className="w-fit"
           count={+(props.allCoins?.length / 20).toFixed(0)}
           variant="outlined"
-          color="primary"
           sx={customStyles}
-          size="small"
+          size="large"
+          color="primary"
+          shape="rounded"
+          hidePrevButton
+          hideNextButton
           onChange={(e, val) => {
             setPageNum(val);
           }}

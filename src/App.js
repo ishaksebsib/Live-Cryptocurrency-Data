@@ -8,9 +8,13 @@ import LiveChart from "./components/trending/LiveChart";
 function App() {
   const [modalStatus, setModalStatus] = useState(false);
   const [coinId, setCurrenCoinid] = useState("");
-  const [themeLight, setTheme] = useState(true);
+  const [themeLight, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem("theme");
+    return storedTheme ? JSON.parse(storedTheme) : true;
+  });
 
   const onsetThemeHandler = () => {
+    localStorage.setItem("theme", JSON.stringify(!themeLight));
     setTheme((status) => !status);
   };
 
