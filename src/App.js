@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CryptoCurrencies from "./components/cryptocurrencies/CryptoCurrencies";
 import NavBar from "./components/navbar/NavBar";
 
@@ -26,6 +26,10 @@ function App() {
       setCurrenCoinid(id);
     }
   };
+
+  useEffect(() => {
+    document.title = "Crypto Tracker | Home Page";
+  }, []);
 
   return (
     <div className={`${themeLight === true ? "" : "bg-[#0a1929] text-white"}`}>
